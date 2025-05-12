@@ -1,0 +1,120 @@
+[versions]
+agp = "8.9.2"  # Lưu ý: Đây có thể là phiên bản AGP thử nghiệm/canary.
+android-compileSdk = "35" # CẬP NHẬT LÊN 35 (hoặc 36 nếu muốn theo gợi ý lỗi AAR)
+android-minSdk = "24"
+android-targetSdk = "34" # Có thể xem xét nâng cấp sau khi compileSdk ổn định
+androidx-activityCompose = "1.10.1"
+androidx-appcompat = "1.7.0"
+androidx-constraintlayout = "2.2.1"
+androidx-core-ktx = "1.16.0"
+androidx-espresso-core = "3.6.1"
+androidx-material = "1.12.0"
+androidx-test-junit = "1.2.1"
+compose-plugin = "1.7.0"
+junit = "4.13.2"
+kotlin = "2.1.10"
+coil3 = "3.0.0-rc02"
+ktor = "3.0.1"
+lifecycleViewmodel = "2.8.3"
+navigationCompose = "2.8.0-alpha10"
+coroutines = "1.9.0"
+ksp = "2.0.20-1.0.24"
+sqlite = "2.5.1"
+androidx-room = "2.7.1"
+kotlinx-serialization = "1.7.3"
+kermit = "2.0.4"
+buildkonfig = "0.15.1"
+androidx-data-store = "1.1.6"
+coreSplashscreen = "1.0.1"
+size = "0.5.0"
+koin = "4.0.0"
+foundationAndroidVersion = "1.8.1" # Version cho androidx.compose.foundation:foundation-android
+
+[libraries]
+androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycleViewmodel" }
+# Firebase
+firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" } # Đảm bảo bạn đã thêm firebase-bom trong build.gradle.kts
+
+# Kotlinx Coroutines
+kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
+# Bạn có thể cần kotlinx-coroutines-core và kotlinx-coroutines-android nữa, tùy thuộc vào cách KMM setup
+# kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+# kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+
+# AndroidX Core
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
+
+# Testing
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-junit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso-core" }
+
+# AndroidX UI (Legacy - nếu còn dùng)
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-material = { group = "com.google.android.material", name = "material", version.ref = "androidx-material" } # Material Components (MDC), không phải Compose Material3
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
+
+# AndroidX Compose
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+androidx-foundation-android = { group = "androidx.compose.foundation", name = "foundation-android", version.ref = "foundationAndroidVersion" } # Sửa lại để dùng một version ref
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+# Koin
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
+koin-composeVM = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" } # KMM ViewModel base class from Koin
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+# Ktor
+ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor"} # Ktor serialization for Kotlinx
+ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor"}
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" } # For JVM/Android
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" } # Android specific Ktor client
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" } # For iOS
+
+# Kotlinx Serialization
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+# Logging
+kermit = {module = "co.touchlab:kermit", version.ref = "kermit"}
+
+# DataStore
+androidx-data-store-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "androidx-data-store" } # Core for Preferences DataStore
+androidx-data-store-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidx-data-store" } # Android implementation
+
+# UI Utilities
+screen-size = { module = "dev.chrisbanes.material3:material3-window-size-class-multiplatform", version.ref = "size" }
+
+# Coil (Image Loading)
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
+coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
+coil-network-ktor3 = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil3" }
+coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" } # Coil core multiplatform
+
+# Navigation
+navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" } # Jetbrains' wrapper for AndroidX Navigation Compose
+
+# Room (Database)
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" } # KSP annotation processor
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" } # Runtime for common code (interfaces/entities)
+
+# SQLite
+sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" } # SQLite driver for KMM (includes native libs)
+
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" } # Kotlin Compose Compiler plugin
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" } # Kotlin Serialization plugin
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" } # Kotlin Symbol Processing
+buildkonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
+room = { id = "androidx.room", version.ref = "androidx-room" } # Room Gradle plugin
