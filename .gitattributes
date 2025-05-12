@@ -2,16 +2,16 @@
 * text=auto
 
 # Khai báo rõ ràng các kiểu file luôn là text (nếu cần)
-*.kt text
- *.java text
-*.xml text
-*.gradle text
-*.properties text
-*.gitignore text
-*.gitattributes text
+# *.kt text
+# *.java text
+# *.xml text
+# *.gradle text
+# *.properties text
+# *.gitignore text
+# *.gitattributes text
 
 # Khai báo các kiểu file không phải text (để Git không đụng vào line endings)
-*.png binary
- *.jpg binary
- *.jar binary
- *.keystore binary
+# *.png binary
+# *.jpg binary
+# *.jar binary
+# *.keystore binary
