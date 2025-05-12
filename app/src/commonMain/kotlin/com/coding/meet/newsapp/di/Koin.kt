@@ -6,7 +6,7 @@ import com.coding.meet.newsapp.di.auth.authModuleCommon
 // import com.coding.meet.newsapp.di.databaseModule // Nếu phần lớn là common
 // import com.coding.meet.newsapp.di.repositoryModule
 // import com.coding.meet.newsapp.di.viewmodelModule // Cho các ViewModel không phải Auth
-
+import com.coding.meet.newsapp.di.firebaseAuthServiceModule
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
 
@@ -34,6 +34,8 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) =
 
             // Các module platform-specific được cung cấp qua expect/actual
             // Sẽ bao gồm module cung cấp AuthLocalDataSourceImpl và DataStore cho Android
-            *platformSpecificModules().toTypedArray()
+            *platformSpecificModules().toTypedArray(),
+            firebaseAuthServiceModule()// Module cung cấp FirebaseAuthService
+
         )
     }

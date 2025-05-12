@@ -29,10 +29,13 @@ coreSplashscreen = "1.0.1"
 size = "0.5.0"
 koin = "4.0.0"
 foundationAndroidVersion = "1.8.1" # Version cho androidx.compose.foundation:foundation-android
+googleServicesPlugin = "4.4.2"
+firebaseBom = "33.1.0"
 
 [libraries]
 androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycleViewmodel" }
 # Firebase
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" } # Đảm bảo bạn đã thêm firebase-bom trong build.gradle.kts
 
 # Kotlinx Coroutines
@@ -118,3 +121,4 @@ kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", vers
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" } # Kotlin Symbol Processing
 buildkonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
 room = { id = "androidx.room", version.ref = "androidx-room" } # Room Gradle plugin
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServicesPlugin" }

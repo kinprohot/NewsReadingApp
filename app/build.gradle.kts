@@ -13,6 +13,7 @@ plugins {
     alias(libs.plugins.kotlinx.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
+    alias(libs.plugins.google.services) // ÁP DỤNG PLUGIN NÀY
 }
 
 kotlin {
@@ -46,6 +47,7 @@ kotlin {
         val desktopMain by getting
 
         androidMain.dependencies {
+            implementation(libs.firebase.bom)
             implementation(project.dependencies.platform("com.google.firebase:firebase-bom:33.13.0"))
             implementation(libs.firebase.auth.ktx)
             implementation("com.google.android.gms:play-services-auth:21.3.0")
@@ -114,7 +116,7 @@ kotlin {
             api(libs.koin.core) // api because it's exposed in public APIs like ViewModels
             implementation(libs.koin.compose) // Koin integration for Compose KMM
             // Koin integration with AndroidX Compose (Needed for koinViewModel()) - MOVED TO androidMain
-             implementation(libs.koin.composeVM) // REMOVED/MOVED - Assuming this maps to koin-androidx-compose
+            implementation(libs.koin.composeVM) // REMOVED/MOVED - Assuming this maps to koin-androidx-compose
             // If libs.koin.composeVM maps to io.insert-koin:koin-compose-viewmodel
             // which is a separate KMM ViewModel artifact, keep it here.
             // PLEASE VERIFY YOUR libs.versions.toml FOR `composeVM` ALIAS.
